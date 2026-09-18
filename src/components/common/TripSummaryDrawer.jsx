@@ -56,7 +56,7 @@ export default function TripSummaryDrawer() {
   const hasUnknownPrices = tripItems.some(i => i.isUnknownPrice || i.price === null || i.price === undefined);
 
   return (
-    <aside className="bg-white border border-slate-200 rounded-3xl p-5 shadow-xs flex flex-col space-y-4">
+    <aside className="w-full xl:w-72 shrink-0 min-w-0 bg-white border border-slate-200 rounded-3xl p-5 shadow-xs flex flex-col space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between pb-3 border-b border-slate-100">
         <div className="flex items-center gap-2">

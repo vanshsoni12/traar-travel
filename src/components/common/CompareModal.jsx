@@ -16,7 +16,7 @@ export default function CompareModal() {
   if (!isCompareModalOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-start sm:items-[safe_center] justify-center p-4 overflow-y-auto">
       <div className="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 animate-in zoom-in-95 duration-150 my-6">
         <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-5">
           <div className="flex items-center gap-2.5">

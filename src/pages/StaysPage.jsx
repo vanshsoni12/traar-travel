@@ -463,8 +463,8 @@ export default function StaysPage() {
       </div>
 
       {/* Main Content Area: Grid + Persistent Trip Panel */}
-      <div className="flex items-start gap-6">
-        <div className="flex-1 min-w-0">
+      <div className="flex flex-col xl:flex-row items-start gap-6">
+        <div className="w-full flex-1 min-w-0">
           <div className="flex items-center justify-between mb-3 text-xs text-slate-500 font-medium">
             <span>Showing <strong className="text-slate-900">{filteredStays.length}</strong> verified accommodations</span>
             <span className="text-amber-800 bg-amber-50/80 px-2 py-0.5 rounded-md font-semibold border border-amber-200/60 text-[11px]">
@@ -489,7 +489,7 @@ export default function StaysPage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4">
               {filteredStays.map((stay) => {
                 const inTrip = isItemInTrip(stay.id);
                 const isFav = savedFavourites.includes(stay.id);

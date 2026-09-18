@@ -94,7 +94,7 @@ export default function DataPipelineModal({ isOpen, onClose }) {
       onClick={(e) => {
         if (e.target === e.currentTarget) handleClose();
       }}
-      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto cursor-default"
+      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-start sm:items-[safe_center] justify-center p-4 overflow-y-auto cursor-default"
     >
       <div className="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 animate-in zoom-in-95 duration-150 my-6">
         {/* Modal Header */}

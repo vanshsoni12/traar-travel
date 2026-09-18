@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { 
   Home, 
   MapPin, 
@@ -36,6 +36,34 @@ export default function Sidebar() {
     setShowPipelineModal
   } = useApp();
 
+  const sidebarRef = useRef(null);
+  useEffect(() => {
+    if (!isMobileSidebarOpen) return;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    const mobile = window.matchMedia('(max-width: 1023px)');
+    if (mobile.matches) document.body.style.overflow = 'hidden';
+    sidebarRef.current?.querySelector('button')?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setIsMobileSidebarOpen(false);
+      if (event.key !== 'Tab' || !mobile.matches) return;
+      const controls = [...sidebarRef.current.querySelectorAll('button, select, [tabindex="0"]')]
+        .filter(node => node.getClientRects().length > 0);
+      const first = controls[0], last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    const onResize = () => { if (!mobile.matches) setIsMobileSidebarOpen(false); };
+    document.addEventListener('keydown', onKeyDown);
+    mobile.addEventListener('change', onResize);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+      mobile.removeEventListener('change', onResize);
+      previousFocus?.focus();
+    };
+  }, [isMobileSidebarOpen, setIsMobileSidebarOpen]);
+
   const navItems = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'destination', label: 'Destination Overview', icon: MapPin },
@@ -62,10 +90,13 @@ export default function Sidebar() {
         />
       )}
 
-      <aside 
+      <aside
+        id="main-navigation"
+        aria-label="Main navigation"
+        ref={sidebarRef}
         className={`
-          fixed top-0 bottom-0 left-0 z-50 w-[235px] bg-white text-slate-800 flex flex-col justify-between transition-transform duration-200 ease-in-out border-r border-slate-200/80 shadow-xs
-          ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+          fixed top-0 bottom-0 left-0 z-50 w-[235px] max-w-[calc(100vw-24px)] bg-white text-slate-800 flex flex-col justify-between transition-transform duration-200 ease-in-out border-r border-slate-200/80 shadow-xs
+          ${isMobileSidebarOpen ? 'translate-x-0 visible' : '-translate-x-full invisible lg:visible lg:translate-x-0'}
         `}
       >
         {/* Brand header with new Logo */}
@@ -92,6 +123,7 @@ export default function Sidebar() {
               </div>
             </button>
             <button 
+              aria-label="Close navigation"
               onClick={() => setIsMobileSidebarOpen(false)} 
               className="p-1 rounded-md text-slate-400 hover:text-slate-700 lg:hidden ml-2 cursor-pointer"
             >
@@ -100,6 +132,21 @@ export default function Sidebar() {
           </div>
         </div>
 
+        {/* Portal selection stays available when header controls collapse. */}
+        <div className="px-4 py-2 xl:hidden">
+          <label htmlFor="sidebar-role" className="block text-xs font-semibold mb-1">Portal</label>
+          <select id="sidebar-role" value={userRole}
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 px-2 py-2"
+            onChange={(event) => {
+              const role = event.target.value;
+              changeUserRole(role);
+              handleNavClick(role === 'provider' ? 'dashboard' : role === 'admin' ? 'admin' : 'home');
+            }}>
+            <option value="traveller">Traveller</option>
+            <option value="provider">Provider Portal</option>
+            <option value="admin">Administration</option>
+          </select>
+        </div>
         {/* Navigation list */}
         <div className="px-3 flex-1 overflow-y-auto py-2 space-y-1">
           <p className="px-3 text-[11px] font-bold uppercase tracking-wider text-slate-400 pb-1">
@@ -161,7 +208,7 @@ export default function Sidebar() {
           {/* Quick Shortcuts: Compare */}
           {compareListings.length > 0 && (
             <button
-              onClick={() => setIsCompareModalOpen(true)}
+              onClick={() => { setIsMobileSidebarOpen(false); setIsCompareModalOpen(true); }}
               className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 mt-1 cursor-pointer"
             >
               <div className="flex items-center gap-2">

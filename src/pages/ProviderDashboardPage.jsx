@@ -200,14 +200,14 @@ export default function ProviderDashboardPage() {
               className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs hover:border-teal-300 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
             >
               {/* Left Details */}
-              <div className="flex items-start gap-3 min-w-0">
+              <div className="flex items-start gap-3 w-full sm:flex-1 min-w-0">
                 <div className="w-14 h-14 rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200">
                   <img src={listing.image} alt={listing.name} className="w-full h-full object-cover" />
                 </div>
 
                 <div className="min-w-0 space-y-1">
                   <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="text-sm font-bold text-slate-900 truncate">{listing.name}</h3>
+                    <h3 className="text-sm font-bold text-slate-900 break-words min-w-0 max-w-full">{listing.name}</h3>
                     <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 capitalize">
                       {listing.category}
                     </span>
@@ -219,7 +219,7 @@ export default function ProviderDashboardPage() {
                     <span className="truncate">{listing.neighbourhood || listing.address || 'Bhopal'}</span>
                   </div>
 
-                  <div className="flex items-center gap-3 text-xs">
+                  <div className="flex flex-wrap items-center gap-3 text-xs">
                     <span className="font-bold text-slate-900">
                       ₹{listing.price}
                       <span className="font-normal text-slate-400 text-[11px] ml-1">

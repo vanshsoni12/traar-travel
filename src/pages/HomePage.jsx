@@ -158,9 +158,9 @@ export default function HomePage() {
   return (
     <div className="space-y-8 pb-16">
       {/* Hero Section with Vibrant Imagery and Clean Search Card */}
-      <div className="relative rounded-3xl overflow-hidden shadow-md border border-teal-100/60 bg-teal-950 min-h-[480px] flex items-center">
+      <div className="relative rounded-3xl shadow-md border border-teal-100/60 bg-teal-950 min-h-[480px] flex items-center">
         {/* Background Image: Scenic View of Manua Bhan Ki Tekri, Bhopal */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tekri.jpg/1280px-Tekri.jpg"
             alt="Scenic view from Manua Bhan Ki Tekri, Bhopal"

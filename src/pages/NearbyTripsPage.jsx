@@ -585,7 +585,7 @@ export default function NearbyTripsPage() {
             ))}
           </div>
 
-          <div className="relative min-w-[260px]" ref={searchContainerRef}>
+          <div className="relative w-full min-w-0 sm:w-auto sm:min-w-[260px]" ref={searchContainerRef}>
             <input
               type="text"
               value={searchFilter}
@@ -646,8 +646,8 @@ export default function NearbyTripsPage() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex items-start gap-6">
-        <div className="flex-1 min-w-0 space-y-4">
+      <div className="flex flex-col xl:flex-row items-start gap-6">
+        <div className="w-full flex-1 min-w-0 space-y-4">
           <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
             <span>Showing <strong className="text-slate-900">{filteredTrips.length}</strong> nearby destinations</span>
             <span className="text-lavender-800 bg-lavender-50/80 px-2 py-0.5 rounded-md font-semibold border border-lavender-200/60 text-[11px]">

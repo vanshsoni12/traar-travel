@@ -36,3 +36,19 @@
     display: block !important;
   }
 }
+
+/* Touch layouts: keep controls readable and usable without browser auto-zoom. */
+@media (max-width: 639px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea {
+    font-size: 16px;
+    min-width: 0;
+  }
+  button, select, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+    min-height: 44px;
+  }
+  button { touch-action: manipulation; }
+  button > svg { flex-shrink: 0; }
+}
+
+#main-navigation { padding-bottom: env(safe-area-inset-bottom); }
+main { overflow-wrap: anywhere; }

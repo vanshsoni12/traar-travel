@@ -59,7 +59,7 @@ export default function ExportEstimateModal({ isOpen, onClose }) {
       onClick={(e) => {
         if (e.target === e.currentTarget) setShowExportModal(false);
       }}
-      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto cursor-default print:p-0 print:bg-white"
+      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-start sm:items-[safe_center] justify-center p-4 overflow-y-auto cursor-default print:p-0 print:bg-white"
     >
       <div className="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-100 space-y-6 animate-in zoom-in-95 duration-150 my-8 print:shadow-none print:border-none print:m-0 print:p-4">
         {/* Modal Top Bar (hidden during print) */}

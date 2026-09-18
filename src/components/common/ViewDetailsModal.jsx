@@ -58,9 +58,9 @@ export default function ViewDetailsModal() {
       onClick={(e) => {
         if (e.target === e.currentTarget) setViewDetailsItem(null);
       }}
-      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto cursor-default"
+      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-start sm:items-[safe_center] justify-center p-4 overflow-y-auto cursor-default"
     >
-      <div className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-100 animate-in zoom-in-95 duration-150 my-8">
+      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[calc(100dvh-4rem)] overflow-y-auto shadow-2xl border border-slate-100 animate-in zoom-in-95 duration-150 my-8">
         {/* Modal Image Gallery */}
         <div className="relative h-64 sm:h-72 w-full bg-slate-100">
           <img 

@@ -39,7 +39,7 @@ export default function WayToModal() {
       onClick={(e) => {
         if (e.target === e.currentTarget) setWayToItem(null);
       }}
-      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto cursor-default"
+      className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-start sm:items-[safe_center] justify-center p-4 overflow-y-auto cursor-default"
     >
       <div className="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 space-y-5 animate-in zoom-in-95 duration-150 my-6">
         {/* Modal Header */}
