@@ -1,0 +1,103 @@
+export const PLACES_DATA = [
+  {
+    id: 'upper-lake',
+    name: 'Upper Lake',
+    category: 'Nature & Lakes',
+    locality: 'Bhopal, Madhya Pradesh',
+    address: 'VIP Road & Lake View Road, Bhopal, Madhya Pradesh 462001',
+    distance: '2.1 km (Straight-line estimate)',
+    distanceKm: 2.1,
+    price: 100,
+    priceDisplay: '₹100 / ticket (Sample data)',
+    hasPrice: true,
+    priceUnit: 'ticket',
+    hours: '6:00 AM – 10:00 PM (Sample data)',
+    about: 'Also known as Bhojtal, Upper Lake is one of the oldest artificial lakes in India, created by Raja Bhoj in the 11th century. Spanning over 31 square kilometers, it is a vital source of water, avian biodiversity, and a beloved destination for scenic morning strolls and boat rides.',
+    busyDays: 'Weekends (Saturday & Sunday evenings)',
+    isFamous: true,
+    isHiddenGem: false,
+    image: 'https://images.unsplash.com/photo-1626014303757-6564477577f1?auto=format&fit=crop&w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1626014303757-6564477577f1?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80'
+    ],
+    defaultTickets: 2
+  },
+  {
+    id: 'van-vihar',
+    name: 'Van Vihar',
+    category: 'National Park',
+    locality: 'Shahpura, Bhopal, Madhya Pradesh',
+    address: 'Lake View Road, Adjacent to Upper Lake, Bhopal, Madhya Pradesh 462002',
+    distance: '4.8 km (Straight-line estimate)',
+    distanceKm: 4.8,
+    price: null,
+    priceDisplay: 'Price not available (Sample data)',
+    hasPrice: false,
+    priceUnit: 'ticket',
+    hours: 'Not available (Sample data)',
+    about: 'Van Vihar is a unique open national park and wildlife rescue shelter contiguous to the Upper Lake. Sprawling over 445 hectares, animals live in expansive natural open enclosures. Visitors can cycle or walk along the lakeside road watching deer, carnivores, and rare migratory birds.',
+    busyDays: 'Closed on Fridays; busy on Sunday afternoons',
+    isFamous: true,
+    isHiddenGem: false,
+    image: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80'
+    ],
+    defaultTickets: 2
+  },
+  {
+    id: 'tribal-museum',
+    name: 'Tribal Museum',
+    fullName: 'Tribal Museum, Shyamla Hills, Bhopal',
+    category: 'Museum & Heritage',
+    locality: 'Shyamla Hills, Bhopal, Madhya Pradesh',
+    address: 'Shyamla Hills, Bhopal, Madhya Pradesh 462002',
+    distance: '5.3 km (Straight-line estimate)',
+    distanceKm: 5.3,
+    price: 100,
+    priceDisplay: '₹100 / ticket',
+    hasPrice: true,
+    priceUnit: 'ticket',
+    hours: 'Not available',
+    about: "The Tribal Museum in Shyamla Hills showcases the rich cultural heritage of Madhya Pradesh's tribal communities. It features exhibitions of traditional art, crafts, musical instruments, costumes and household items, offering insight into their way of life and traditions.",
+    busyDays: 'Not available',
+    isFamous: true,
+    isHiddenGem: false,
+    image: 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=600&q=80'
+    ],
+    defaultTickets: 2
+  },
+  {
+    id: 'gohar-mahal',
+    name: 'Gohar Mahal',
+    category: 'Heritage Palace',
+    locality: 'Old Bhopal, Bhopal, Madhya Pradesh',
+    address: 'VIP Road, Near Upper Lake, Old City, Bhopal, Madhya Pradesh 462001',
+    distance: '6.1 km (Straight-line estimate)',
+    distanceKm: 6.1,
+    price: null,
+    priceDisplay: 'Price not available (Sample data)',
+    hasPrice: false,
+    priceUnit: 'ticket',
+    hours: 'Not available (Sample data)',
+    about: 'Built in 1820 by Qudsia Begum, also known as Gohar Begum, the first woman ruler of Bhopal. The palace is an architectural marvel blending Hindu and Mughal styles with antique wooden pillars and carved arches on the lake edge.',
+    busyDays: 'Evenings during crafts exhibitions',
+    isFamous: false,
+    isHiddenGem: true,
+    image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'
+    ],
+    defaultTickets: 2
+  }
+];
